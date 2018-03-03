@@ -1,7 +1,11 @@
 require 'active_admin'
 
-class ActiveAdmin::ActiveResource::Engine < ::Rails::Engine
-  engine_name 'activeadmin_active_resource'
+module ActiveAdmin
+  module ActiveResource
+    class Engine < ::Rails::Engine
+      engine_name 'activeadmin_active_resource'
+    end
+  end
 end
 
 ::ActiveResource::Base.class_eval do
