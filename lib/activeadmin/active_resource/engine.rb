@@ -14,6 +14,21 @@ end
   self.collection_parser = ActiveAdmin::ActiveResource::Results
 
   class << self
+    prepend( FindExt = Module.new do
+      def find( *arguments )
+        # First argument an array -> batch action
+        if arguments.count > 0 && arguments[0].is_a?( Array )
+          ret = []
+          arguments[0].each do |id|
+            ret << find( id )
+          end
+          ret.compact
+        else
+          super
+        end
+      end
+    end )
+
     def _ransackers
       {}
     end
@@ -27,12 +42,6 @@ end
     def columns
       @columns ||= self.known_attributes.map { |col| OpenStruct.new( name: col ) }
     end
-
-    # -> http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaCache.html#method-i-columns_hash
-    # def columns_hash
-    #   # { 'title' => OpenStruct.new( type: :string ) }
-    #   {}
-    # end
 
     def find_all( options = {} )
       prefix_options, query_options = split_options(options[:params])
@@ -59,18 +68,11 @@ end
     def page( page )
       @page = page.to_i
       @page = 1 if @page < 1
-      # results = find_all params: {page: page, per_page: 10, order: @order}
-      # results.current_page = page ? page.to_i : 1
-      # results.limit_value = @connection_response['pagination-limit'].to_i
-      # results.total_count = @connection_response['pagination-totalcount'].to_i
-      # results.total_pages = ( results.total_count.to_f / results.limit_value ).ceil
-      # results
       self
     end
 
     def per( page_count )
       @page_count = page_count.to_i
-      # self
       results
     end
 

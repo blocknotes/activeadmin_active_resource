@@ -1,20 +1,16 @@
-# ActiveAdmin Active Resource [![Gem Version](https://badge.fury.io/rb/activeadmin_active_resource.svg)](https://badge.fury.io/rb/activeadmin_active_resource)
+# ActiveAdmin + Active Resource [![Gem Version](https://badge.fury.io/rb/activeadmin_active_resource.svg)](https://badge.fury.io/rb/activeadmin_active_resource)
 
-An Active Admin plugin to use Active Resource.
-
-Data is fetched from an external API.
+An ActiveAdmin plugin to use a REST API in place of a local database as data source using [Active Resource](https://github.com/rails/activeresource).
 
 WARNING: this component is a Beta version, some Active Admin functionalities don't work as expected:
 
-- Batch Action: not supported
 - Filters: partially supported (see example)
 - Edit: fields must be configured explicitly
 - Comments: not supported
 
 ## Install
 
-- Add to your Gemfile:
-`gem 'activeadmin_active_resource'`
+- Add to your Gemfile: `gem 'activeadmin_active_resource'`
 - Execute bundle
 - Disable comments in active_admin config initializer
 
@@ -24,9 +20,9 @@ WARNING: this component is a Beta version, some Active Admin functionalities don
 
 ```rb
 class Post < ActiveResource::Base
-  self.site = 'http://localhost:3000'
+  self.site = 'http://localhost:3000'  # API url: another Rails project, a REST API, etc.
 
-  self.schema = {
+  self.schema = {  # Fields must be declared explicitly
     id: :integer,
     title: :string,
     description: :text,
@@ -45,13 +41,11 @@ end
 
 ```rb
 ActiveAdmin.register Post do
-  config.batch_actions = false
-
   filter :title_cont  # Ransack postfixes required (_eq, _cont, etc.)
 
   controller do
     def permitted_params
-      params.permit!  # Just to make things easier :)
+      params.permit!  # Permit all just for testing
     end
   end
 
@@ -64,6 +58,26 @@ ActiveAdmin.register Post do
     f.actions
   end
 end
+```
+
+- Ransack options [here](https://github.com/activerecord-hackery/ransack#search-matchers)
+
+- Rails API index example with Ransack and Kaminari:
+
+```rb
+  after_action :set_pagination, only: [:index]
+
+  def index
+    per_page = params[:per_page].to_i
+    per_page = 15 if per_page < 1
+    @posts = Post.ransack( params[:q] ).result.order( params[:order] ).page( params[:page].to_i ).per( per_page )
+  end
+
+  def set_pagination
+    headers['Pagination-Limit'] = @posts.limit_value.to_s
+    headers['Pagination-Offset'] = @posts.offset_value.to_s
+    headers['Pagination-TotalCount'] = @posts.total_count.to_s
+  end
 ```
 
 ## Notes
