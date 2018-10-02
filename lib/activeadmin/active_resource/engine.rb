@@ -45,6 +45,7 @@ end
 
     def find_all( options = {} )
       prefix_options, query_options = split_options(options[:params])
+      query_options[:limit] = query_options[:per_page]
       path = collection_path(prefix_options, query_options)
       @connection_response = connection.get(path, headers)
       instantiate_collection( (format.decode( @connection_response.body ) || []), query_options, prefix_options )
