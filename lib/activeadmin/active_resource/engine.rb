@@ -45,6 +45,7 @@ end
 
     def find_all( options = {} )
       prefix_options, query_options = split_options(options[:params])
+      query_options[:limit] = query_options[:per_page]
       path = collection_path(prefix_options, query_options)
       @connection_response = connection.get(path, headers)
       instantiate_collection( (format.decode( @connection_response.body ) || []), query_options, prefix_options )
@@ -94,11 +95,18 @@ end
 
     def results
       results = find_all params: {page: @page, per_page: @page_count, order: @order, q: @ransack_params}
+      decorate_with_pagination_data(results)
+    end
+
+    def decorate_with_pagination_data(results)
       results.current_page = @page
       results.limit_value = @connection_response['pagination-limit'].to_i
       results.total_count = @connection_response['pagination-totalcount'].to_i
       results.total_pages = ( results.total_count.to_f / results.limit_value ).ceil
-      results
+    rescue
+      # noop -- I don't know what to do for failures
+    ensure
+      return results
     end
   end
 end
