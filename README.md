@@ -65,19 +65,19 @@ end
 - Rails API index example with Ransack and Kaminari:
 
 ```rb
-  after_action :set_pagination, only: [:index]
+after_action :set_pagination, only: [:index]
 
-  def index
-    per_page = params[:per_page].to_i
-    per_page = 15 if per_page < 1
-    @posts = Post.ransack( params[:q] ).result.order( params[:order] ).page( params[:page].to_i ).per( per_page )
-  end
+def index
+  per_page = params[:per_page].to_i
+  per_page = 15 if per_page < 1
+  @posts = Post.ransack( params[:q] ).result.order( params[:order] ).page( params[:page].to_i ).per( per_page )
+end
 
-  def set_pagination
-    headers['Pagination-Limit'] = @posts.limit_value.to_s
-    headers['Pagination-Offset'] = @posts.offset_value.to_s
-    headers['Pagination-TotalCount'] = @posts.total_count.to_s
-  end
+def set_pagination
+  headers['Pagination-Limit'] = @posts.limit_value.to_s
+  headers['Pagination-Offset'] = @posts.offset_value.to_s
+  headers['Pagination-TotalCount'] = @posts.total_count.to_s
+end
 ```
 
 ## Notes
