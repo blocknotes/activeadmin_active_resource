@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module ActiveAdmin
   module ActiveResource
     class Results < ::ActiveResource::Collection
       attr_accessor :current_page, :limit_value, :total_count, :total_pages
 
-      def initialize( elements = [] )
+      def initialize(elements = [])
         super elements
         @limit_value = ActiveAdmin.application.default_per_page
         @total_count = 0
@@ -11,7 +13,7 @@ module ActiveAdmin
         @current_page = 1
       end
 
-      def except( *params )
+      def except(*_params)
         self
       end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'active_admin'
 
 module ActiveAdmin
@@ -40,7 +42,7 @@ end
 
     # -> http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-columns
     def columns
-      @columns ||= self.known_attributes.map { |col| OpenStruct.new(name: col) }
+      @columns ||= known_attributes.map { |col| OpenStruct.new(name: col) }
     end
 
     def find_all(options = {})
@@ -52,8 +54,8 @@ end
     end
 
     # -> http://api.rubyonrails.org/classes/ActiveRecord/FinderMethods.html#method-i-find_by
-    def find_by(arg, *args)
-      arg && arg['id'] ? self.find(arg['id']) : self.find(:first, arg)
+    def find_by(arg, *_args)
+      arg && arg['id'] ? find(arg['id']) : find(:first, arg)
     end
 
     # -> http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-inheritance_column
@@ -63,7 +65,7 @@ end
 
     # -> http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-quoted_table_name
     def quoted_table_name
-      @quoted_table_name ||= "\"#{self.to_s.tableize}\""
+      @quoted_table_name ||= "\"#{to_s.tableize}\""
     end
 
     def page(page)
@@ -77,13 +79,13 @@ end
       results
     end
 
-    def ransack(params = {}, options = {})
+    def ransack(params = {}, _options = {})
       @ransack_params = params.blank? ? {} : params.permit!.to_h
       OpenStruct.new(conditions: {}, object: OpenStruct.new(klass: self), result: self)
     end
 
     # -> http://api.rubyonrails.org/classes/ActiveRecord/Reflection/ClassMethods.html#method-i-reflect_on_all_associations
-    def reflect_on_all_associations(macro = nil)
+    def reflect_on_all_associations(_macro = nil)
       []
     end
 
