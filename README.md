@@ -71,6 +71,8 @@ end
   end
 ```
 
+For a Rails6 API example see [here](examples/rails6-api).
+
 ## Notes
 If you create a new rails project don't use *--skip-active-record*
 
