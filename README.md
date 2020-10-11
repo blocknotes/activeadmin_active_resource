@@ -12,7 +12,12 @@ WARNING: this component is a Beta version, some Active Admin functionalities don
 - Execute bundle
 - Disable comments in active_admin config initializer
 
-## Example
+## Examples
+Please take a look at the examples folder:
+- a Rails6 application with Active Admin and this component, see [here](examples/rails6-admin);
+- a Rails6 API application used as data source, see [here](examples/rails6-api).
+
+Basic instructions:
 - Post model:
 ```rb
 class Post < ActiveResource::Base
@@ -70,8 +75,6 @@ end
     headers['Pagination-TotalCount'] = @posts.total_count.to_s
   end
 ```
-
-For a Rails6 API example see [here](examples/rails6-api).
 
 ## Notes
 If you create a new rails project don't use *--skip-active-record*
