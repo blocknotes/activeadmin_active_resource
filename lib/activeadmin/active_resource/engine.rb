@@ -15,6 +15,13 @@ end
 
   self.collection_parser = ActiveAdmin::ActiveResource::Results
 
+  # ref: https://api.rubyonrails.org/classes/ActiveRecord/AttributeMethods/ClassMethods.html#method-i-column_for_attribute
+  def column_for_attribute(name)
+    # => ActiveRecord::ConnectionAdapters::Column
+    col_name = name.to_s
+    send(:class).columns.find { |col| col.name == col_name }
+  end
+
   class << self
     prepend(FindExt = Module.new do
       def find(*arguments)
@@ -49,9 +56,17 @@ end
       @column_names ||= columns.map(&:name)
     end
 
-    # -> http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-columns
+    # ref: http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-columns
     def columns
-      @columns ||= known_attributes.map { |col| OpenStruct.new(name: col) }
+      # => array of ActiveRecord::ConnectionAdapters::Column
+      @columns ||= begin
+        schema.map do |name, type|
+          col_name = name.to_s
+          col_type = type.to_sym
+          col_type = :hidden if col_name == 'id'
+          OpenStruct.new(name: col_name, type: col_type)
+        end
+      end
     end
 
     def find_all(options = {})
