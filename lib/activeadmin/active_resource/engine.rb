@@ -52,6 +52,7 @@ end
       end
     end
 
+    # ref: http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-column_names
     def column_names
       @column_names ||= columns.map(&:name)
     end
@@ -135,7 +136,8 @@ end
 end
 
 ::ActiveResource::Connection.class_eval do
+  # ref: https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/Quoting.html#method-i-quote_column_name
   def quote_column_name(column_name)
-    column_name
+    column_name.to_s
   end
 end
