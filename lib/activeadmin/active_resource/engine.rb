@@ -35,7 +35,16 @@ end
       {}
     end
 
-    # -> http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-column_names
+    # ref: https://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-content_columns
+    def content_columns
+      @content_columns ||= columns.reject do |c|
+        # c.name == primary_key || # required to update enities
+        c.name == inheritance_column ||
+          c.name.end_with?("_id") ||
+          c.name.end_with?("_count")
+      end
+    end
+
     def column_names
       @column_names ||= columns.map(&:name)
     end
