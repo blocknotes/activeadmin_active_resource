@@ -1,0 +1,99 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://localhost:4000/authors.json
+    body:
+      encoding: UTF-8
+      string: '{"name":"Some name","age":"30","email":"some_email@example.com"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c955e57777ec0d73639dca6748560d00"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - cca4b724-cbae-4f6d-8605-be557dff5280
+      X-Runtime:
+      - '0.007875'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"success":true}'
+  recorded_at: Tue, 13 Oct 2020 05:29:37 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/authors.json?limit=30&order=%22authors%22.id%20desc&page=1&per_page=30
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"9cb2d1efa48999b1000cc072919a7131"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - '0086dad8-8c38-4f21-8556-a0c3825b494a'
+      X-Runtime:
+      - '0.003586'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc.ddd","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T05:08:57.552Z"},{"id":2,"name":"John
+        Doe","age":24,"email":"aaa@bbb.ccc","created_at":"2020-10-11T11:59:19.491Z","updated_at":"2020-10-12T06:25:36.780Z"},{"id":4,"name":"Some
+        name","age":30,"email":"some_email@example.com","created_at":"2020-10-13T05:29:37.726Z","updated_at":"2020-10-13T05:29:37.726Z"}]'
+  recorded_at: Tue, 13 Oct 2020 05:29:37 GMT
+recorded_with: VCR 6.0.0

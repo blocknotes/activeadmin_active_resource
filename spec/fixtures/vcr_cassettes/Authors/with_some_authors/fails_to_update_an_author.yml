@@ -1,0 +1,188 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:4000/authors/1.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d4e660448a8406a490245aa248237137"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 16da1d9c-e4c2-40ae-abbc-e313d61a4b88
+      X-Runtime:
+      - '0.069907'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc.ddd","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T05:08:57.552Z"}'
+  recorded_at: Tue, 13 Oct 2020 05:10:30 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/authors/1.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d4e660448a8406a490245aa248237137"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fadbf68b-53b8-4ccd-a7dd-b0a14b861b2d
+      X-Runtime:
+      - '0.002537'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc.ddd","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T05:08:57.552Z"}'
+  recorded_at: Tue, 13 Oct 2020 05:10:30 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/authors/1.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d4e660448a8406a490245aa248237137"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 71793214-5895-4a21-b234-f4be6d2da88e
+      X-Runtime:
+      - '0.002319'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc.ddd","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T05:08:57.552Z"}'
+  recorded_at: Tue, 13 Oct 2020 05:10:30 GMT
+- request:
+    method: put
+    uri: http://localhost:4000/authors/1.json
+    body:
+      encoding: UTF-8
+      string: '{"id":"1","name":"","age":"42","email":"aaa@bbb.ccc.ddd"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - bb9a7cc4-2054-47a5-8a81-47bb1fbc8ee4
+      X-Runtime:
+      - '0.007901'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"success":false,"errors":{"name":["can''t be blank","is too short
+        (minimum is 2 characters)"]}}'
+  recorded_at: Tue, 13 Oct 2020 05:10:30 GMT
+recorded_with: VCR 6.0.0

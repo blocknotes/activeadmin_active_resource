@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:4000/authors.json?limit=30&order=%22authors%22.id%20desc&page=1&per_page=30
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f47661f535df1521e65fafab8be6de39"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 986d1c22-863a-4912-a379-a571e8ae9761
+      X-Runtime:
+      - '0.072275'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"name":"Mat","age":33,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-08-28T13:25:36.502Z"},{"id":2,"name":"John
+        Doe","age":24,"email":"aaa@bbb.ccc","created_at":"2020-10-11T11:59:19.491Z","updated_at":"2020-10-12T06:25:36.780Z"}]'
+  recorded_at: Mon, 12 Oct 2020 20:24:01 GMT
+recorded_with: VCR 6.0.0
