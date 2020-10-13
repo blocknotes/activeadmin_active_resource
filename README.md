@@ -1,8 +1,7 @@
 # Active Admin + Active Resource
-[![Gem Version](https://badge.fury.io/rb/activeadmin_active_resource.svg)](https://badge.fury.io/rb/activeadmin_active_resource) [![CircleCI](https://circleci.com/gh/blocknotes/
-activeadmin_active_resource.svg?style=svg)](https://circleci.com/gh/blocknotes/activeadmin_active_resource)
+[![Gem Version](https://badge.fury.io/rb/activeadmin_active_resource.svg)](https://badge.fury.io/rb/activeadmin_active_resource) [![CircleCI](https://circleci.com/gh/blocknotes/activeadmin_active_resource.svg?style=svg)](https://circleci.com/gh/blocknotes/activeadmin_active_resource)
 
-An Active Admin plugin to use a REST API in place of a local database as data source using [Active Resource](https://github.com/rails/activeresource).
+An Active Admin plugin to use a REST API data source in place of a local database using [Active Resource](https://github.com/rails/activeresource).
 
 NOTICE: currently some Active Admin features don't work as expected:
 - Filters: partially supported (see example)
@@ -10,14 +9,16 @@ NOTICE: currently some Active Admin features don't work as expected:
 - Comments: not supported
 
 ## Install
-- Add to your Gemfile: `gem 'activeadmin_active_resource'`
+- Add to your project's Gemfile (with Active Admin installed): `gem 'activeadmin_active_resource'`
 - Execute bundle
-- Disable comments in active_admin config initializer
+- Disable comments in Active Admin config initializer (`config.comments = false`)
 
 ## Examples
 Please take a look at the examples folder:
 - a Rails6 application with Active Admin and this component, see [here](examples/rails6-admin);
 - a Rails6 API application used as data source, see [here](examples/rails6-api).
+
+For another example check the [specs](spec).
 
 Basic instructions:
 - Post model:
@@ -84,10 +85,10 @@ If you create a new rails project don't use *--skip-active-record*.
 ## Do you like it? Star it!
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
 
-Take a look at [other Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) that I made if you are curious.
+Take a look at [other Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) if you are curious.
 
 ## Contributors
-[Mattia Roccoberton](http://blocknot.es): author
+- [Mattia Roccoberton](http://blocknot.es): author
 
 ## License
 The gem is available as open-source under the terms of the [MIT](LICENSE.txt).
