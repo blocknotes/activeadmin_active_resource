@@ -1,10 +1,12 @@
-# ActiveAdmin + Active Resource [![Gem Version](https://badge.fury.io/rb/activeadmin_active_resource.svg)](https://badge.fury.io/rb/activeadmin_active_resource)
+# Active Admin + Active Resource
+[![Gem Version](https://badge.fury.io/rb/activeadmin_active_resource.svg)](https://badge.fury.io/rb/activeadmin_active_resource) [![CircleCI](https://circleci.com/gh/blocknotes/
+activeadmin_active_resource.svg?style=svg)](https://circleci.com/gh/blocknotes/activeadmin_active_resource)
 
-An ActiveAdmin plugin to use a REST API in place of a local database as data source using [Active Resource](https://github.com/rails/activeresource).
+An Active Admin plugin to use a REST API in place of a local database as data source using [Active Resource](https://github.com/rails/activeresource).
 
-WARNING: this component is a Beta version, some Active Admin functionalities don't work as expected:
+NOTICE: currently some Active Admin features don't work as expected:
 - Filters: partially supported (see example)
-- Edit: fields must be configured explicitly
+- Form fields: some fields must be configured explicitly
 - Comments: not supported
 
 ## Install
@@ -77,15 +79,15 @@ end
 ```
 
 ## Notes
-If you create a new rails project don't use *--skip-active-record*
+If you create a new rails project don't use *--skip-active-record*.
 
 ## Do you like it? Star it!
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
 
-Take a look at [other ActiveAdmin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) that I made if you are curious.
+Take a look at [other Active Admin components](https://github.com/blocknotes?utf8=✓&tab=repositories&q=activeadmin&type=source) that I made if you are curious.
 
 ## Contributors
 [Mattia Roccoberton](http://blocknot.es): author
 
 ## License
-[MIT](LICENSE.txt)
+The gem is available as open-source under the terms of the [MIT](LICENSE.txt).
