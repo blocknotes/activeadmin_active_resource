@@ -2,7 +2,7 @@
 
 RSpec.describe 'Authors', type: :system do
   it 'fails to create an author', :vcr do
-    visit '/admin/authors/1/edit'
+    visit '/admin/authors/new'
 
     fill_in('author[name]', with: 'Boh')
     fill_in('author[age]', with: '24')
@@ -30,8 +30,7 @@ RSpec.describe 'Authors', type: :system do
       visit '/admin/authors'
 
       expect(page).to have_http_status(:success)
-      expect(page).to have_css('#author_1')
-      expect(page).to have_css('#author_2')
+      expect(page).to have_css('#index_table_authors td.col-name', count: 4)
     end
 
     it 'loads an author', :vcr do
@@ -70,7 +69,5 @@ RSpec.describe 'Authors', type: :system do
       expect(page).to have_http_status(:success)
       expect(page).to have_content('Author was successfully destroyed.')
     end
-
-    # require 'pry'; binding.pry
   end
 end

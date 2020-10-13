@@ -1,24 +1,22 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://localhost:4000/authors.json
+    method: get
+    uri: http://localhost:4000/tags/1.json
     body:
-      encoding: UTF-8
-      string: '{"name":"Boh","age":"24","email":"Some invalid e-mail address"}'
+      encoding: US-ASCII
+      string: ''
     headers:
-      Content-Type:
+      Accept:
       - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
       User-Agent:
       - Ruby
   response:
     status:
-      code: 422
-      message: Unprocessable Entity
+      code: 200
+      message: OK
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -34,16 +32,18 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
+      Etag:
+      - W/"3e15bf856c71c2437856a51e790cc7e2"
       Cache-Control:
-      - no-cache
+      - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 253782fa-57ae-47f6-96be-219e3b5faa93
+      - 57c1f7ac-bb93-4696-bedf-257fff4f33ce
       X-Runtime:
-      - '0.032520'
+      - '0.003424'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"success":false,"errors":{"email":["Invalid email"]}}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '{"id":1,"name":"Some tag","created_at":"2020-10-11T12:12:55.979Z","updated_at":"2020-10-11T12:12:55.979Z"}'
+  recorded_at: Wed, 14 Oct 2020 05:42:59 GMT
 recorded_with: VCR 6.0.0

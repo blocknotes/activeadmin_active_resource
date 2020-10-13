@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:4000/authors/1.json
+    uri: http://localhost:4000/posts/1.json
     body:
       encoding: US-ASCII
       string: ''
@@ -33,22 +33,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d7135947b02d9f1704b4779341c74195"
+      - W/"5f757e3d7d17e6f0d31d178732496a2e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 01041d76-28cd-49be-9819-f551c8bec477
+      - 3c0d2be9-c097-4198-966f-aa32c78bc41a
       X-Runtime:
-      - '0.003625'
+      - '0.003541'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T19:23:03.330Z"}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '{"id":1,"title":"possst","description":"Some desc...","author_id":5,"category":"","dt":null,"position":null,"published":false,"created_at":"2020-08-28T13:25:53.057Z","updated_at":"2020-10-13T17:42:49.618Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:21 GMT
 - request:
     method: get
-    uri: http://localhost:4000/authors/1.json
+    uri: http://localhost:4000/posts/1.json
     body:
       encoding: US-ASCII
       string: ''
@@ -79,22 +79,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d7135947b02d9f1704b4779341c74195"
+      - W/"5f757e3d7d17e6f0d31d178732496a2e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 417eb9df-e471-4eeb-9251-9c6b4227df68
+      - b770b099-d9da-476e-9cea-e8b18dd87f86
       X-Runtime:
-      - '0.002388'
+      - '0.004325'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T19:23:03.330Z"}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '{"id":1,"title":"possst","description":"Some desc...","author_id":5,"category":"","dt":null,"position":null,"published":false,"created_at":"2020-08-28T13:25:53.057Z","updated_at":"2020-10-13T17:42:49.618Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:21 GMT
 - request:
     method: get
-    uri: http://localhost:4000/authors/1.json
+    uri: http://localhost:4000/authors.json
     body:
       encoding: US-ASCII
       string: ''
@@ -125,25 +125,73 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d7135947b02d9f1704b4779341c74195"
+      - W/"7a2170a22701cefc09ae884af815347e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7525f761-0c5d-4148-b92e-418a36c91a7c
+      - f23b2f64-bc0f-4601-ad19-d107f6edb3e7
       X-Runtime:
-      - '0.002497'
+      - '0.003944'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T19:23:03.330Z"}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '[{"id":1,"name":"Mat","age":30,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-14T06:10:02.523Z"},{"id":5,"name":"John
+        Doe","age":24,"email":"aaa@bbb.ccc","created_at":"2020-10-13T05:42:31.193Z","updated_at":"2020-10-13T05:42:31.193Z"},{"id":7,"name":"Last
+        one","age":30,"email":"aaa@bbb.ccc","created_at":"2020-10-14T06:04:37.612Z","updated_at":"2020-10-14T06:04:37.612Z"}]'
+  recorded_at: Wed, 14 Oct 2020 06:12:21 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/posts/1.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5f757e3d7d17e6f0d31d178732496a2e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ffe969d7-b13e-4341-8448-5758f1ce7119
+      X-Runtime:
+      - '0.002387'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"title":"possst","description":"Some desc...","author_id":5,"category":"","dt":null,"position":null,"published":false,"created_at":"2020-08-28T13:25:53.057Z","updated_at":"2020-10-13T17:42:49.618Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:21 GMT
 - request:
     method: put
-    uri: http://localhost:4000/authors/1.json
+    uri: http://localhost:4000/posts/1.json
     body:
       encoding: UTF-8
-      string: '{"id":"1","name":"Mat","age":"30","email":"aaa@bbb.ccc"}'
+      string: '{"id":"1","author_id":"5","title":"","description":"Some desc...","category":"","published":"0","dt(1i)":"","dt(2i)":"","dt(3i)":"","dt(4i)":"","dt(5i)":"","position":""}'
     headers:
       Content-Type:
       - application/json
@@ -155,8 +203,8 @@ http_interactions:
       - Ruby
   response:
     status:
-      code: 200
-      message: OK
+      code: 422
+      message: Unprocessable Entity
     headers:
       X-Frame-Options:
       - SAMEORIGIN
@@ -172,23 +220,22 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
-      Etag:
-      - W/"c955e57777ec0d73639dca6748560d00"
       Cache-Control:
-      - max-age=0, private, must-revalidate
+      - no-cache
       X-Request-Id:
-      - 1cb92d76-ac71-404f-a6b9-20127353a69e
+      - 5b97798e-2c6a-457a-a326-2b2816a7d98e
       X-Runtime:
-      - '0.008154'
+      - '0.005724'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"success":true}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '{"success":false,"errors":{"title":["can''t be blank","is too short
+        (minimum is 2 characters)"]}}'
+  recorded_at: Wed, 14 Oct 2020 06:12:21 GMT
 - request:
     method: get
-    uri: http://localhost:4000/authors/1.json
+    uri: http://localhost:4000/authors.json
     body:
       encoding: US-ASCII
       string: ''
@@ -219,17 +266,19 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"281311c4ac3a4c358c1afedd134e76be"
+      - W/"7a2170a22701cefc09ae884af815347e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - a81d0fb2-3a25-43f3-840e-20e58d90e615
+      - 2dbccd2a-ee94-43fc-89f4-7c8c82511390
       X-Runtime:
-      - '0.002372'
+      - '0.002511'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"name":"Mat","age":30,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-14T06:10:02.523Z"}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '[{"id":1,"name":"Mat","age":30,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-14T06:10:02.523Z"},{"id":5,"name":"John
+        Doe","age":24,"email":"aaa@bbb.ccc","created_at":"2020-10-13T05:42:31.193Z","updated_at":"2020-10-13T05:42:31.193Z"},{"id":7,"name":"Last
+        one","age":30,"email":"aaa@bbb.ccc","created_at":"2020-10-14T06:04:37.612Z","updated_at":"2020-10-14T06:04:37.612Z"}]'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
 recorded_with: VCR 6.0.0

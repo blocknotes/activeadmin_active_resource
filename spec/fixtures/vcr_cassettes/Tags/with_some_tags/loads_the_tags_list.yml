@@ -1,56 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: http://localhost:4000/authors.json
-    body:
-      encoding: UTF-8
-      string: '{"name":"Some name","age":"30","email":"some_email@example.com"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
-      Etag:
-      - W/"c955e57777ec0d73639dca6748560d00"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - fa2dec0d-b6b3-4521-b581-8dbd72886657
-      X-Runtime:
-      - '0.005388'
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: '{"success":true}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
-- request:
     method: get
-    uri: http://localhost:4000/authors.json?limit=5&order=%22authors%22.id%20desc&page=1&per_page=5
+    uri: http://localhost:4000/tags.json?limit=30&order=%22tags%22.id%20desc&page=1&per_page=30
     body:
       encoding: US-ASCII
       string: ''
@@ -81,20 +33,73 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d89d1238c4c66945cdf42839fa518547"
+      - W/"a37946575ecbc6017a8566887d3a605f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - cb649122-bf8c-4852-948e-65a08eed2171
+      - 6a2916ba-e872-495c-81eb-6d281153f902
       X-Runtime:
-      - '0.003400'
+      - '0.003551'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '[{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T19:23:03.330Z"},{"id":5,"name":"John
-        Doe","age":24,"email":"aaa@bbb.ccc","created_at":"2020-10-13T05:42:31.193Z","updated_at":"2020-10-13T05:42:31.193Z"},{"id":7,"name":"Last
-        one","age":30,"email":"aaa@bbb.ccc","created_at":"2020-10-14T06:04:37.612Z","updated_at":"2020-10-14T06:04:37.612Z"},{"id":8,"name":"Some
-        name","age":30,"email":"some_email@example.com","created_at":"2020-10-14T06:10:02.259Z","updated_at":"2020-10-14T06:10:02.259Z"}]'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '[{"id":1,"name":"Some tag","created_at":"2020-10-11T12:12:55.979Z","updated_at":"2020-10-11T12:12:55.979Z"},{"id":2,"name":"Attag!","created_at":"2020-10-11T12:13:03.091Z","updated_at":"2020-10-11T12:13:03.091Z"}]'
+  recorded_at: Tue, 13 Oct 2020 12:10:25 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/tags.json?limit=5&order=%22tags%22.id%20desc&page=1&per_page=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Pagination-Limit:
+      - '5'
+      Pagination-Offset:
+      - '0'
+      Pagination-Totalcount:
+      - '12'
+      Etag:
+      - W/"c3d1c9c411b9367990485034fa5cd3be"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9e4f0086-2035-4f8d-9336-a62ea3d78bdf
+      X-Runtime:
+      - '0.005067'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":13,"name":"Tag 19","created_at":"2020-10-13T19:34:41.024Z","updated_at":"2020-10-13T19:34:41.024Z"},{"id":12,"name":"Tag
+        18","created_at":"2020-10-13T19:34:41.016Z","updated_at":"2020-10-13T19:34:41.016Z"},{"id":11,"name":"Tag
+        17","created_at":"2020-10-13T19:34:41.009Z","updated_at":"2020-10-13T19:34:41.009Z"},{"id":10,"name":"Tag
+        16","created_at":"2020-10-13T19:34:41.001Z","updated_at":"2020-10-13T19:34:41.001Z"},{"id":9,"name":"Tag
+        15","created_at":"2020-10-13T19:34:40.993Z","updated_at":"2020-10-13T19:34:40.993Z"}]'
+  recorded_at: Wed, 14 Oct 2020 05:48:59 GMT
 recorded_with: VCR 6.0.0

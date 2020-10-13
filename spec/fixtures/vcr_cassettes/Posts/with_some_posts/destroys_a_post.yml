@@ -1,0 +1,326 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://localhost:4000/posts.json?limit=5&order=%22posts%22.id%20desc&page=1&per_page=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"59182e622c7666f7abd80def905c790a"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 50039b7d-b8cb-4cf5-9e02-b5d061d0526b
+      X-Runtime:
+      - '0.003120'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"title":"possst","description":"Some desc","author_id":5,"category":"","dt":null,"position":null,"published":false,"created_at":"2020-08-28T13:25:53.057Z","updated_at":"2020-10-14T06:12:22.163Z"},{"id":5,"title":"New
+        post!","description":"...","author_id":1,"category":"","dt":null,"position":null,"published":true,"created_at":"2020-10-14T06:11:40.473Z","updated_at":"2020-10-14T06:11:40.473Z"}]'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/authors/5.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f2974d23178429e8a0ae8a00d6b46fbf"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - ff91d5c0-c9b1-41de-aaba-be6a1db60c98
+      X-Runtime:
+      - '0.003203'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":5,"name":"John Doe","age":24,"email":"aaa@bbb.ccc","created_at":"2020-10-13T05:42:31.193Z","updated_at":"2020-10-13T05:42:31.193Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/authors/1.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"281311c4ac3a4c358c1afedd134e76be"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - c410f21d-6e08-4fc6-91ec-677b2e6fb346
+      X-Runtime:
+      - '0.002916'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":1,"name":"Mat","age":30,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-14T06:10:02.523Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/posts/5.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"3a89b33f74307837d532aa029f58257d"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 3e69b6fd-02bb-4ed8-8593-b21f59b43d1a
+      X-Runtime:
+      - '0.002343'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":5,"title":"New post!","description":"...","author_id":1,"category":"","dt":null,"position":null,"published":true,"created_at":"2020-10-14T06:11:40.473Z","updated_at":"2020-10-14T06:11:40.473Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
+- request:
+    method: delete
+    uri: http://localhost:4000/posts/5.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c955e57777ec0d73639dca6748560d00"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - e24d8faf-e0d3-4055-a397-5c86267bffe4
+      X-Runtime:
+      - '0.009129'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"success":true}'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/posts.json?limit=5&order=%22posts%22.id%20desc&page=1&per_page=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"b023a57ac996044fc40c59e9b027dab2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 1520ed20-f0d2-44e9-a824-2a53eece7d60
+      X-Runtime:
+      - '0.002579'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '[{"id":1,"title":"possst","description":"Some desc","author_id":5,"category":"","dt":null,"position":null,"published":false,"created_at":"2020-08-28T13:25:53.057Z","updated_at":"2020-10-14T06:12:22.163Z"}]'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
+- request:
+    method: get
+    uri: http://localhost:4000/authors/5.json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"f2974d23178429e8a0ae8a00d6b46fbf"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 362180cc-b95f-463f-aa6b-ac2b7a1b3026
+      X-Runtime:
+      - '0.003132'
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      string: '{"id":5,"name":"John Doe","age":24,"email":"aaa@bbb.ccc","created_at":"2020-10-13T05:42:31.193Z","updated_at":"2020-10-13T05:42:31.193Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
+recorded_with: VCR 6.0.0

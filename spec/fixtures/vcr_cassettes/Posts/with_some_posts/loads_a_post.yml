@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://localhost:4000/authors/1.json
+    uri: http://localhost:4000/posts/1.json
     body:
       encoding: US-ASCII
       string: ''
@@ -33,22 +33,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d7135947b02d9f1704b4779341c74195"
+      - W/"5f757e3d7d17e6f0d31d178732496a2e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7e6291bf-2568-45a2-b4cc-ccc34344e455
+      - acdcb086-43f2-401f-a668-1b5e72e18628
       X-Runtime:
-      - '0.002889'
+      - '0.002515'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T19:23:03.330Z"}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '{"id":1,"title":"possst","description":"Some desc...","author_id":5,"category":"","dt":null,"position":null,"published":false,"created_at":"2020-08-28T13:25:53.057Z","updated_at":"2020-10-13T17:42:49.618Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
 - request:
     method: get
-    uri: http://localhost:4000/authors/1.json
+    uri: http://localhost:4000/authors/5.json
     body:
       encoding: US-ASCII
       string: ''
@@ -79,22 +79,22 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d7135947b02d9f1704b4779341c74195"
+      - W/"f2974d23178429e8a0ae8a00d6b46fbf"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f0b48b35-fe60-433e-87c6-b70b2eead4b2
+      - d07d3f27-3fa1-4c14-af1f-76c6d24c11fd
       X-Runtime:
-      - '0.002350'
+      - '0.003074'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T19:23:03.330Z"}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '{"id":5,"name":"John Doe","age":24,"email":"aaa@bbb.ccc","created_at":"2020-10-13T05:42:31.193Z","updated_at":"2020-10-13T05:42:31.193Z"}'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
 - request:
     method: get
-    uri: http://localhost:4000/authors/1.json
+    uri: http://localhost:4000/tags.json?post_id=1
     body:
       encoding: US-ASCII
       string: ''
@@ -124,65 +124,34 @@ http_interactions:
       - strict-origin-when-cross-origin
       Content-Type:
       - application/json; charset=utf-8
+      Pagination-Limit:
+      - '15'
+      Pagination-Offset:
+      - '0'
+      Pagination-Totalcount:
+      - '12'
       Etag:
-      - W/"d7135947b02d9f1704b4779341c74195"
+      - W/"576ccdcd7fcd03824d5c14bdde068db9"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 28bf85e8-fe98-4a19-a0c8-7402de5215d9
+      - ca8d0b6e-716b-4858-8d66-a400b902553b
       X-Runtime:
-      - '0.004909'
+      - '0.006034'
       Transfer-Encoding:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"id":1,"name":"Mat","age":42,"email":"aaa@bbb.ccc","created_at":"2020-08-28T13:25:36.502Z","updated_at":"2020-10-13T19:23:03.330Z"}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
-- request:
-    method: put
-    uri: http://localhost:4000/authors/1.json
-    body:
-      encoding: UTF-8
-      string: '{"id":"1","name":"","age":"42","email":"aaa@bbb.ccc"}'
-    headers:
-      Content-Type:
-      - application/json
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 422
-      message: Unprocessable Entity
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Content-Type-Options:
-      - nosniff
-      X-Download-Options:
-      - noopen
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      Content-Type:
-      - application/json; charset=utf-8
-      Cache-Control:
-      - no-cache
-      X-Request-Id:
-      - 3361ce81-4ade-43c1-997e-0b71efef14d2
-      X-Runtime:
-      - '0.003416'
-      Transfer-Encoding:
-      - chunked
-    body:
-      encoding: UTF-8
-      string: '{"success":false,"errors":{"name":["can''t be blank","is too short
-        (minimum is 2 characters)"]}}'
-  recorded_at: Wed, 14 Oct 2020 06:10:02 GMT
+      string: '[{"id":1,"name":"Some tag","created_at":"2020-10-11T12:12:55.979Z","updated_at":"2020-10-11T12:12:55.979Z"},{"id":2,"name":"Attag!","created_at":"2020-10-11T12:13:03.091Z","updated_at":"2020-10-11T12:13:03.091Z"},{"id":4,"name":"Tag
+        10","created_at":"2020-10-13T19:34:40.950Z","updated_at":"2020-10-13T19:34:40.950Z"},{"id":5,"name":"Tag
+        11","created_at":"2020-10-13T19:34:40.959Z","updated_at":"2020-10-13T19:34:40.959Z"},{"id":6,"name":"Tag
+        12","created_at":"2020-10-13T19:34:40.967Z","updated_at":"2020-10-13T19:34:40.967Z"},{"id":7,"name":"Tag
+        13","created_at":"2020-10-13T19:34:40.976Z","updated_at":"2020-10-13T19:34:40.976Z"},{"id":8,"name":"Tag
+        14","created_at":"2020-10-13T19:34:40.983Z","updated_at":"2020-10-13T19:34:40.983Z"},{"id":9,"name":"Tag
+        15","created_at":"2020-10-13T19:34:40.993Z","updated_at":"2020-10-13T19:34:40.993Z"},{"id":10,"name":"Tag
+        16","created_at":"2020-10-13T19:34:41.001Z","updated_at":"2020-10-13T19:34:41.001Z"},{"id":11,"name":"Tag
+        17","created_at":"2020-10-13T19:34:41.009Z","updated_at":"2020-10-13T19:34:41.009Z"},{"id":12,"name":"Tag
+        18","created_at":"2020-10-13T19:34:41.016Z","updated_at":"2020-10-13T19:34:41.016Z"},{"id":13,"name":"Tag
+        19","created_at":"2020-10-13T19:34:41.024Z","updated_at":"2020-10-13T19:34:41.024Z"}]'
+  recorded_at: Wed, 14 Oct 2020 06:12:22 GMT
 recorded_with: VCR 6.0.0
