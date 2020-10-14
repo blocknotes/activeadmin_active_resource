@@ -38,7 +38,7 @@ ActiveAdmin.register Post do
 
     f.inputs 'Post' do
       f.input :id, as: :hidden unless f.object.new_record? # Required
-      f.input :author_id
+      f.input :author_id, as: :select, collection: Author.all
       f.input :title
       f.input :description
       f.input :category
