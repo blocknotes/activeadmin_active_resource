@@ -3,10 +3,10 @@
 
 An Active Admin plugin to use a REST API data source in place of a local database using [Active Resource](https://github.com/rails/activeresource).
 
-NOTICE: currently some Active Admin features don't work as expected:
-- Filters: partially supported (see example)
-- Form fields: some fields must be configured explicitly
-- Comments: not supported
+**NOTICE**: currently some Active Admin features don't work as expected:
+- Filters are partially supported (see example)
+- Some form fields must be configured explicitly (like the associations)
+- Comments are not supported
 
 ## Install
 - Add to your project's Gemfile (with Active Admin installed): `gem 'activeadmin_active_resource'`
