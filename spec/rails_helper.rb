@@ -15,7 +15,7 @@ require 'webmock/rspec'
 Dir[File.expand_path('support/**/*.rb', __dir__)].sort.each { |f| require f }
 
 # Force deprecations to raise an exception.
-ActiveSupport::Deprecation.behavior = :raise
+# ActiveSupport::Deprecation.behavior = :raise
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
