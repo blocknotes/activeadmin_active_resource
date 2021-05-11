@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 require 'active_admin'
+require 'active_resource'
+
 require_relative 'base'
 require_relative 'connection'
+require_relative 'results'
 
 module ActiveAdmin
   module ActiveResource

@@ -50,14 +50,13 @@ module ActiveAdmin
         # ref: http://api.rubyonrails.org/classes/ActiveRecord/ModelSchema/ClassMethods.html#method-i-columns
         def columns
           # => array of ActiveRecord::ConnectionAdapters::Column
-          @columns ||= begin
+          @columns ||=
             schema.map do |name, type|
               col_name = name.to_s
               col_type = type.to_sym
               col_type = :hidden if col_name == 'id'
               OpenStruct.new(name: col_name, type: col_type)
             end
-          end
         end
 
         def find_all(options = {})
@@ -129,8 +128,8 @@ module ActiveAdmin
 
         class << base
           prepend ClassMethods
-        end  
-      end 
+        end
+      end
     end
   end
 end
