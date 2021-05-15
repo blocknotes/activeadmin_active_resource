@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'sequel'
+
+require File.expand_path('../app/conf.rb', __dir__)
+migrations = File.expand_path('../db/migrate/*', __dir__)
+
+Dir[migrations].sort.each do |migration|
+  puts "> #{File.basename(migration)}"
+  require migration
+end
+
+require File.expand_path('../db/seeds.rb', __dir__)
