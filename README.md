@@ -1,4 +1,8 @@
-# Active Admin + Active Resource [![Gem Version](https://badge.fury.io/rb/activeadmin_active_resource.svg)](https://badge.fury.io/rb/activeadmin_active_resource) [![Specs](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/specs.yml)
+# Active Admin + Active Resource
+[![gem version](https://badge.fury.io/rb/activeadmin_active_resource.svg)](https://badge.fury.io/rb/activeadmin_active_resource)
+[![gem downloads](https://badgen.net/rubygems/dt/activeadmin_active_resource)](https://rubygems.org/gems/activeadmin_active_resource)
+[![linters](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/linters.yml)
+[![specs](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/specs.yml)
 
 An Active Admin plugin to use a REST API data source in place of a local database using [Active Resource](https://github.com/rails/activeresource).
 
@@ -7,6 +11,8 @@ An Active Admin plugin to use a REST API data source in place of a local databas
 - Filters are partially supported (see example)
 - Some form fields must be configured explicitly (like the associations)
 - Comments are not supported
+
+Please :star: if you like it.
 
 ## Install
 
