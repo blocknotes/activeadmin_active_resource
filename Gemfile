@@ -5,12 +5,6 @@ source 'https://rubygems.org'
 gemspec
 
 group :development, :test do
-  gem 'pry-rails'
-  gem 'rubocop', '~> 1.0'
-  gem 'rubocop-rspec', '~> 2.3.0'
-end
-
-group :test do
   gem 'activestorage', '~> 6.0'
   gem 'capybara', '~> 3.33'
   gem 'listen', '~> 3.5'
@@ -23,4 +17,16 @@ group :test do
   gem 'sqlite3', '~> 1.4'
   gem 'vcr', '~> 6.0'
   gem 'webmock', '~> 3.9'
+
+  # Linters
+  gem 'fasterer'
+  gem 'reek'
+  gem 'rubocop'
+  gem 'rubocop-packaging'
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
+
+  # Tools
+  gem 'pry-rails'
 end
