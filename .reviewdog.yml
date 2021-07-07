@@ -1,8 +1,5 @@
 ---
 runner:
-  brakeman:
-    cmd: bin/brakeman
-    level: info
   fasterer:
     cmd: bin/fasterer
     level: info

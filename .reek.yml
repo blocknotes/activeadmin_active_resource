@@ -2,5 +2,6 @@
 exclude_paths:
   - bin/*
   - db/schema.rb
+  - examples/**/*
   - spec/dummy/**/*
   - vendor/**/*

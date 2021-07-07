@@ -2,10 +2,17 @@
 inherit_from:
   - https://relaxed.ruby.style/rubocop.yml
 
+require:
+  - rubocop-packaging
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
 AllCops:
   Exclude:
     - bin/*
     - db/schema.rb
+    - examples/**/*
     - spec/dummy/**/*
     - vendor/**/*
   NewCops: enable
@@ -19,6 +26,12 @@ Naming/FileName:
 Layout/LineLength:
   Enabled: true
   Max: 120
+
+RSpec/ExampleLength:
+  Max: 8
+
+RSpec/MultipleExpectations:
+  Max: 5
 
 Style/HashEachMethods:
   Enabled: true
