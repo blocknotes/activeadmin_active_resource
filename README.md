@@ -3,6 +3,7 @@
 [![gem downloads](https://badgen.net/rubygems/dt/activeadmin_active_resource)](https://rubygems.org/gems/activeadmin_active_resource)
 [![linters](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/linters.yml/badge.svg)](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/linters.yml)
 [![specs](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/specs.yml/badge.svg)](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/specs.yml)
+[![specs2](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/specs2.yml/badge.svg)](https://github.com/blocknotes/activeadmin_active_resource/actions/workflows/specs2.yml)
 
 An Active Admin plugin to use a REST API data source in place of a local database using [Active Resource](https://github.com/rails/activeresource).
 
@@ -25,9 +26,10 @@ Please :star: if you like it.
 Please take a look at the examples folder:
 
 - a Rails6 application with Active Admin and this component, see [here](examples/rails6-admin);
-- a Rails6 API application used as data source, see [here](examples/rails6-api).
+- a Rails6 API application used as data source, see [here](examples/rails6-api);
+- a Roda API application used as data source, see [here](examples/roda-api).
 
-For another example check the [specs](spec).
+For more examples check the [specs](spec).
 
 Basic instructions:
 
