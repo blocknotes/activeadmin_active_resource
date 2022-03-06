@@ -1,0 +1,7 @@
+FROM ruby:2.7-alpine
+
+RUN apk add --no-cache --update build-base dpkg gcompat sqlite sqlite-dev tzdata
+
+# App setup
+WORKDIR /usr/src/app
+COPY .. .

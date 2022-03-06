@@ -1,0 +1,37 @@
+---
+version: "3.3"
+
+x-defaults:
+  test_app: &test_app
+    command:
+      - |
+        bundle install --gemfile=gemfiles/rails$${RAILS}_activeadmin_activeresource.gemfile
+        bin/appraisal rails$${RAILS}-activeadmin-activeresource rspec
+    entrypoint: ["/bin/sh", "-c"]
+    volumes:
+      - ..:/usr/src/app:delegated
+
+services:
+  tests_26:
+    <<: *test_app
+    build:
+      context: ..
+      dockerfile: extra/Dockerfile_26
+    environment:
+      RAILS: 61
+
+  tests_27:
+    <<: *test_app
+    build:
+      context: ..
+      dockerfile: extra/Dockerfile_27
+    environment:
+      RAILS: 61
+
+  tests_30:
+    <<: *test_app
+    build:
+      context: ..
+      dockerfile: extra/Dockerfile_30
+    environment:
+      RAILS: 61
