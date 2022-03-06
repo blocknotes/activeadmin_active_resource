@@ -3,7 +3,7 @@ PATH
   specs:
     activeadmin_active_resource (0.2.6)
       activeadmin (~> 2.0)
-      activeresource (~> 5.1)
+      activeresource (>= 5.1)
 
 GEM
   remote: https://rubygems.org/
