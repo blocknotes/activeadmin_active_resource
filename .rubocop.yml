@@ -13,6 +13,7 @@ AllCops:
     - bin/*
     - db/schema.rb
     - examples/**/*
+    - gemfiles/**/*
     - spec/dummy/**/*
     - vendor/**/*
   NewCops: enable
