@@ -18,27 +18,9 @@ AllCops:
     - vendor/**/*
   NewCops: enable
 
-Gemspec/RequiredRubyVersion:
-  Enabled: false
-
-Naming/FileName:
-  Enabled: false
-
-Layout/LineLength:
-  Enabled: true
-  Max: 120
+Style/OpenStructUse:
+  Enabled: false # TODO: fix me
 
 RSpec/ExampleLength:
-  Max: 8
-
-RSpec/MultipleExpectations:
-  Max: 5
-
-Style/HashEachMethods:
-  Enabled: true
-
-Style/HashTransformKeys:
-  Enabled: true
-
-Style/HashTransformValues:
-  Enabled: true
+  # default 5
+  Max: 10

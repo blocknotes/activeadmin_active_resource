@@ -158,8 +158,14 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.0)
     minitest (5.15.0)
     nio4r (2.5.8)
+    nokogiri (1.13.3)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    nokogiri (1.13.3-aarch64-linux)
+      racc (~> 1.4)
     nokogiri (1.13.3-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.3-x86_64-linux)
@@ -294,6 +300,8 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  aarch64-linux
+  ruby
   x86_64-darwin-21
   x86_64-linux
 
@@ -321,4 +329,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   2.2.33
+   2.3.8

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe 'Authors', type: :system do
-  it 'fails to create an author', :vcr do
+  it 'fails to create an author', :aggregate_failures, :vcr do
     visit '/admin/authors/new'
 
     fill_in('author[name]', with: 'Boh')
@@ -13,7 +13,7 @@ RSpec.describe 'Authors', type: :system do
     expect(error).to include 'Invalid email'
   end
 
-  it 'creates an author', :vcr do
+  it 'creates an author', :aggregate_failures, :vcr do
     visit '/admin/authors/new'
 
     fill_in('author[name]', with: 'Some name')
@@ -26,21 +26,21 @@ RSpec.describe 'Authors', type: :system do
   end
 
   context 'with some authors' do
-    it 'loads the authors list', :vcr do
+    it 'loads the authors list', :aggregate_failures, :vcr do
       visit '/admin/authors'
 
       expect(page).to have_http_status(:success)
       expect(page).to have_css('#index_table_authors td.col-name', count: 4)
     end
 
-    it 'loads an author', :vcr do
+    it 'loads an author', :aggregate_failures, :vcr do
       visit '/admin/authors/1'
 
       expect(page).to have_http_status(:success)
       expect(page).to have_css('#attributes_table_author_1')
     end
 
-    it 'fails to update an author', :vcr do
+    it 'fails to update an author', :aggregate_failures, :vcr do
       visit '/admin/authors/1/edit'
 
       fill_in('author[name]', with: '')
@@ -51,7 +51,7 @@ RSpec.describe 'Authors', type: :system do
       expect(error).to include "is too short"
     end
 
-    it 'updates an author', :vcr do
+    it 'updates an author', :aggregate_failures, :vcr do
       visit '/admin/authors/1/edit'
 
       fill_in('author[age]', with: '30')
@@ -61,7 +61,7 @@ RSpec.describe 'Authors', type: :system do
       expect(page).to have_content('Author was successfully updated.')
     end
 
-    it 'destroys an author', :vcr do
+    it 'destroys an author', :aggregate_failures, :vcr do
       visit '/admin/authors'
 
       find_all('.delete_link.member_link').last.click
