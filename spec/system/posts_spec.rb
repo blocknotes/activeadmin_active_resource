@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe 'Posts', type: :system do
-  it 'fails to create a post', :vcr do
+  it 'fails to create a post', :aggregate_failures, :vcr do
     visit '/admin/posts/new'
 
     fill_in('post[title]', with: '')
@@ -13,7 +13,7 @@ RSpec.describe 'Posts', type: :system do
   end
 
   context 'with some authors' do
-    it 'creates a post', :vcr do
+    it 'creates a post', :aggregate_failures, :vcr do
       visit '/admin/posts/new'
 
       fill_in('post[title]', with: 'Some title')
@@ -26,21 +26,21 @@ RSpec.describe 'Posts', type: :system do
   end
 
   context 'with some posts' do
-    it 'loads the posts list', :vcr do
+    it 'loads the posts list', :aggregate_failures, :vcr do
       visit '/admin/posts'
 
       expect(page).to have_http_status(:success)
       expect(page).to have_css('#index_table_posts td.col-title', count: 3)
     end
 
-    it 'loads a post', :vcr do
+    it 'loads a post', :aggregate_failures, :vcr do
       visit '/admin/posts/1'
 
       expect(page).to have_http_status(:success)
       expect(page).to have_css('#attributes_table_post_1')
     end
 
-    it 'fails to update a post', :vcr do
+    it 'fails to update a post', :aggregate_failures, :vcr do
       visit '/admin/posts/1/edit'
 
       fill_in('post[title]', with: '')
@@ -51,7 +51,7 @@ RSpec.describe 'Posts', type: :system do
       expect(error).to include "is too short"
     end
 
-    it 'updates a post', :vcr do
+    it 'updates a post', :aggregate_failures, :vcr do
       visit '/admin/posts/1/edit'
 
       fill_in('post[description]', with: 'Some desc')
@@ -61,7 +61,7 @@ RSpec.describe 'Posts', type: :system do
       expect(page).to have_content('Post was successfully updated.')
     end
 
-    it 'destroys a post', :vcr do
+    it 'destroys a post', :aggregate_failures, :vcr do
       visit '/admin/posts'
 
       find_all('.delete_link.member_link').last.click

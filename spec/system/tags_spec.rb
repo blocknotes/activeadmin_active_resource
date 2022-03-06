@@ -2,14 +2,14 @@
 
 RSpec.describe 'Tags', type: :system do
   context 'with some tags' do
-    it 'loads the tags list', :vcr do
+    it 'loads the tags list', :aggregate_failures, :vcr do
       visit '/admin/tags'
 
       expect(page).to have_http_status(:success)
       expect(page).to have_css('#index_table_tags td.col-name', count: 5)
     end
 
-    it 'filters the tags', :vcr do
+    it 'filters the tags', :aggregate_failures, :vcr do
       visit '/admin/tags'
 
       fill_in('q[name_cont]', with: 'Some tag')
@@ -19,7 +19,7 @@ RSpec.describe 'Tags', type: :system do
       expect(name.text).to eq 'Some tag'
     end
 
-    it 'loads a tag', :vcr do
+    it 'loads a tag', :aggregate_failures, :vcr do
       visit '/admin/tags/1'
 
       expect(page).to have_http_status(:success)
