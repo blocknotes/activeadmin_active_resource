@@ -2,7 +2,8 @@
 
 require 'sqlite3'
 
-DB = Sequel.connect('sqlite://db/test.db')
+db_path = File.expand_path("#{__dir__}/../db/test.db")
+DB = Sequel.connect("sqlite://#{db_path}")
 
 DB.extension(:pagination)
 Sequel.default_timezone = :utc
