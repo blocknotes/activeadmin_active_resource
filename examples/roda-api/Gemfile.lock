@@ -6,7 +6,7 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    rack (2.2.3)
+    rack (3.0.7)
     roda (3.43.1)
       rack
     sequel (5.44.0)
