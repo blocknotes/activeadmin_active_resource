@@ -20,14 +20,8 @@ appraise 'rails61-activeadmin-activeresource' do
   gem 'rails', '~> 6.1.0'
 end
 
-# appraise 'rails70-activeadmin22-activeresource51' do
-#   gem 'activeadmin', '~> 2.9.0'
-#   gem 'activeresource', '~> 5.1.0'
-#   gem 'rails', '~> 7.0.0'
-# end
-
-# appraise 'rails70-activeadmin-activeresource' do
-#   gem 'activeadmin'
-#   gem 'activeresource'
-#   gem 'rails', '~> 7.0.0'
-# end
+appraise 'rails70-activeadmin-activeresource' do
+  gem 'activeadmin'
+  gem 'activeresource'
+  gem 'rails', '~> 7.0.0'
+end

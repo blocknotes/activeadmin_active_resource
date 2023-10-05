@@ -327,6 +327,7 @@ DEPENDENCIES
   rubocop-rails
   rubocop-rspec
   sassc
+  sprockets-rails
   sqlite3
   vcr
   webmock
