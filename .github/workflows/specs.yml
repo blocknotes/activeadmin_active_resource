@@ -13,8 +13,8 @@ jobs:
 
     strategy:
       matrix:
-        ruby: ['2.6', '2.7']
-        gemfile: ['rails60_activeadmin22_activeresource51', 'rails60_activeadmin_activeresource']
+        ruby: ['2.7', '3.0']
+        gemfile: ['rails60_activeadmin_activeresource']
 
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
