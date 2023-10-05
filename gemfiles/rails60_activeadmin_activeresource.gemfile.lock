@@ -326,6 +326,7 @@ DEPENDENCIES
   rubocop-rspec
   sassc
   selenium-webdriver
+  sprockets-rails
   sqlite3
   vcr
   webmock
