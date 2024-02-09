@@ -9,6 +9,9 @@ group :development, :test do
   gem 'sassc'
   gem 'sqlite3'
 
+  # Dummy app
+  gem 'rails'
+
   # Testing
   gem 'capybara'
   gem 'cuprite'
