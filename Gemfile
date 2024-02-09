@@ -11,6 +11,7 @@ group :development, :test do
 
   # Dummy app
   gem 'rails'
+  gem 'sprockets-rails', require: 'sprockets/railtie'
 
   # Testing
   gem 'capybara'
